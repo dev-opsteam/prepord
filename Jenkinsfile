@@ -5,7 +5,7 @@ pipeline {
 		steps {
 			script {		
  	
-           url 'https://github.com/Hemanth4188/jenkinsfile.git'
+           url 'https://github.com/dev-opsteam/prepord.git'
 		}
 	}
 	}
@@ -29,33 +29,7 @@ pipeline {
 		}
 	}
 	}
-  post
-    {
-         success
-        {
-            script
-            {
-            
-		    mail to: 'bojanapuhemant8@gmail.com',
-                     subject: "Build + Condition Pass",
-                     body: "Build got success check status @ ${env.BUILD_URL}"
-                
-            }
-	}
-        
-          failure
-	   {
-		   script
-		   {
-                mail to: 'bojanapuhemant8@gmail.com',
-                     subject: "Build fail + Condition Pass",
-                     body: "Build got success check status @ ${env.BUILD_URL}"
-                 
-            }
-        }
-    }
-                            
-        }
+ 
     
 		
 	    }
